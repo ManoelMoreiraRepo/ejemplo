@@ -1,0 +1,21 @@
+<div class="row">
+    <h1>Prueba de Cliente</h1>
+    <!-- routerLink="/nuevocliente" -->
+    <button type="button" class="btn btn-dark col-lg-2" routerLink="/nuevocliente" >
+      Nueva cliente
+  </button>
+    <div class="col-lg-12">
+      <table class="table">
+        <tbody>
+          <tr  *ngFor="let clientes of cliente">
+            <td>{{clientes.nombre}}</td>
+            <td>{{clientes.cif}}</td>
+            <td>{{clientes.direccion}}</td>
+            <td> <button type="button" class="btn btn-dark col-lg-2">
+              Borrar
+          </button></td>
+          </tr>
+        </tbody>
+     </table>
+    </div>
+  </div>
