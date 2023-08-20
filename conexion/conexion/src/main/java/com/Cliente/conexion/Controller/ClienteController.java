@@ -8,6 +8,7 @@ import com.Cliente.conexion.Entity.Cliente;
 import com.Cliente.conexion.Interface.IClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +38,8 @@ public class ClienteController {
     }
     
     @PutMapping("/actualizar/{id}")
-    public String updateCliente(@RequestBody Cliente cliente){     
+    public String updateCliente(@PathVariable("id") int id, @RequestBody Cliente cliente){   
+        
      this.iclienteService.modifyPersona(cliente);
      return "El cliente fue modificado correctamente";
     }
