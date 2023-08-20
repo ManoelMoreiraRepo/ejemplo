@@ -45,6 +45,7 @@ public class ImpClienteService implements IClienteService {
             clienteEncontrado.get().setCif(cliente.getCif());
             clienteEncontrado.get().setNombre(cliente.getNombre());
             clienteEncontrado.get().setDireccion(cliente.getDireccion());
+            iclienteRepository.save(cliente);
         }
 
     }
