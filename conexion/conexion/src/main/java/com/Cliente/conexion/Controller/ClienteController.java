@@ -9,9 +9,11 @@ import com.Cliente.conexion.Interface.IClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,8 +35,14 @@ public class ClienteController {
         iclienteService.savePersona(cliente);
        return "la persona fue creada correctamente";
     }
+    
+    @PutMapping("/actualizar/{id}")
+    public String updateCliente(@RequestBody Cliente cliente){     
+     this.iclienteService.modifyPersona(cliente);
+     return "El cliente fue modificado correctamente";
+    }
 
-    @GetMapping("/detail/{id}")
+    @DeleteMapping("/detail/{id}")
     public String deleteCliente( @PathVariable long id) {
         iclienteService.deletePersona(id);
         return "La persona fue eliminada";

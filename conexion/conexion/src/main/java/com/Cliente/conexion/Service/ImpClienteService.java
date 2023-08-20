@@ -8,6 +8,7 @@ import com.Cliente.conexion.Entity.Cliente;
 import com.Cliente.conexion.Interface.IClienteService;
 import com.Cliente.conexion.Repository.IClienteRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,22 +16,17 @@ import org.springframework.stereotype.Service;
  *
  * @author UP
  */
-@Service 
+@Service
 public class ImpClienteService implements IClienteService {
-    @Autowired IClienteRepository iclienteRepository;
+
+    @Autowired
+    IClienteRepository iclienteRepository;
+
     @Override
     public List<Cliente> getCliente() {
         List<Cliente> clientemostrar = iclienteRepository.findAll();
         return clientemostrar;
     }
-
-   
-   /* public void saveCliente(Cliente cliente) {}
-      public void deleteCliente(Long id) {}
-    @Override
-    public Cliente findPersona(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }*/
 
     @Override
     public void savePersona(Cliente cliente) {
@@ -39,7 +35,17 @@ public class ImpClienteService implements IClienteService {
 
     @Override
     public void deletePersona(Long id) {
-       iclienteRepository.deleteById(id);
+        iclienteRepository.deleteById(id);
     }
-    
+
+    @Override
+    public void modifyPersona(Cliente cliente) {
+        Optional<Cliente> clienteEncontrado = this.iclienteRepository.findById(cliente.getId());
+        if (clienteEncontrado.get() != null) {
+            clienteEncontrado.get().setCif(cliente.getCif());
+            clienteEncontrado.get().setNombre(cliente.getNombre());
+            clienteEncontrado.get().setDireccion(cliente.getDireccion());
+        }
+
+    }
 }
