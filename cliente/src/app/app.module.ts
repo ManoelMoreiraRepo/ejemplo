@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './componets/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NuevoclienteComponent } from './componets/cliente/nuevocliente.component';
+import { EditclienteComponent } from './componets/cliente/editcliente.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NuevoclienteComponent } from './componets/cliente/nuevocliente.componen
     AppComponent,
     ClienteComponent,
     NuevoclienteComponent,
-    HomeComponent
+    HomeComponent,
+    EditclienteComponent
   ],
   imports: [
     BrowserModule,
