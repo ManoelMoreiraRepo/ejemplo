@@ -1,0 +1,96 @@
+<app-header></app-header>
+<div  class="galeria row g-0 justify-content-center align-items-center text-center">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row  py-2 text-center">
+          <div class="col-lg-2">
+            <a class="navbar-brand">
+              <img src="../../../assets/img/gpsNegro.png" alt="GPS" class="img-fluid bg-black rounded-circle"
+                width=" 45" height="">
+            </a>
+          </div>
+          <div class="col-lg-7">
+            <input type="email" class="form-control" id="exampleFormControlInput1"
+              placeholder="Ingresa el empleado a buscar">
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn btn-danger">Buscar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" id="div1">
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">AEP</th>
+              <th scope="col">Legajo</th>
+              <th scope="col">Apellido y Nombre</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr *ngFor="let clientes of cliente" class="text-center"> -->
+            <tr class="text-center">
+              <td>
+                <a class="navbar-brand " href="#">
+                  <img src="../../../assets/img/leoEjemploFigma.jpg" alt="Organigrama"
+                    class="img-fluid bg-black rounded-circle" width=" 50" height="">
+                </a>
+              </td>
+              <td>3215</td>
+              <td>Lopez Peralta, Edgardo</td>
+              <td>
+                <button class="btn btn-warning">Activo</button>
+                <button class="btn btn-danger" style="margin-left: 10px;">Ver</button>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <td>
+                <a class="navbar-brand " href="#">
+                  <img src="../../../assets/img/leoEjemploFigma.jpg" alt="Organigrama"
+                    class="img-fluid bg-black rounded-circle" width=" 50" height="">
+                </a>
+              </td>
+              <td>3215</td>
+              <td>Lopez Peralta, Edgardo</td>
+              <td>
+                <button class="btn btn-warning">Activo</button>
+                <button class="btn btn-danger" style="margin-left: 10px;">Ver</button>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <td>
+                <a class="navbar-brand " href="#">
+                  <img src="../../../assets/img/leoEjemploFigma.jpg" alt="Organigrama"
+                    class="img-fluid bg-black rounded-circle" width=" 50" height="">
+                </a>
+              </td>
+              <td>3215</td>
+              <td>Lopez Peralta, Edgardo</td>
+              <td>
+                <button class="btn btn-warning">Activo</button>
+                <button class="btn btn-danger" style="margin-left: 10px;">Ver</button>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <td>
+                <a class="navbar-brand " href="#">
+                  <img src="../../../assets/img/leoEjemploFigma.jpg" alt="Organigrama"
+                    class="img-fluid bg-black rounded-circle" width=" 50" height="">
+                </a>
+              </td>
+              <td>3215</td>
+              <td>Lopez Peralta, Edgardo</td>
+              <td>
+                <button class="btn btn-warning">Activo</button>
+                <button class="btn btn-danger"   (click)="informacionempleado()" style="margin-left: 10px;">Ver</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
