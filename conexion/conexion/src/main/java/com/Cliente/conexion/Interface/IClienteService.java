@@ -22,5 +22,5 @@ public interface IClienteService {
   
   public void modifyPersona(Cliente cliente);
   
-  /*public Cliente findPersona(Long id);*/
+  public Cliente getPersona(Long id);
 }

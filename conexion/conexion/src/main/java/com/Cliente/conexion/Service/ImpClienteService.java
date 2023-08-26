@@ -49,4 +49,11 @@ public class ImpClienteService implements IClienteService {
         }
 
     }
+
+    @Override
+    public Cliente getPersona(Long id) {
+        Cliente cliente = iclienteRepository.findById(id).get();
+        return cliente;
+    }
+
 }

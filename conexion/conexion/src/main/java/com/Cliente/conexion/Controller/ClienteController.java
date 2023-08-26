@@ -36,6 +36,11 @@ public class ClienteController {
         iclienteService.savePersona(cliente);
        return "la persona fue creada correctamente";
     }
+
+    @GetMapping("/traer/{id}")
+    public Cliente getCliente(@PathVariable long id) {
+        return iclienteService.getPersona(id);
+    }
     
     @PutMapping("/actualizar/{id}")
     public String updateCliente(@PathVariable("id") int id, @RequestBody Cliente cliente){   
