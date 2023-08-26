@@ -10,12 +10,31 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class ClienteComponent implements OnInit {
   cliente: Cliente[] = [];
 
-  // cliente: Cliente = new Cliente("","","");
-
   constructor(public clientesService: ClienteService) { }
 
   ngOnInit(): void {
     this.clientesService.traer().subscribe(data => {this.cliente = data});
+  }
+
+  cargarcliente(): void {
+    this.clientesService.traer().subscribe((data: Cliente[]) => {
+      this.cliente = data;
+    });
+  }
+
+  borrar(id?: number) {
+    if (id != undefined) {
+      this.clientesService.borrar(id).subscribe({
+        next: () => {
+          alert('se eliminó correctamente');
+          this.cargarcliente();
+        },
+        error: (err) => {
+          console.log(err);
+          alert('Error, No se pude eliminar el cliente');
+        }
+      });
+    }
   }
 
 }
