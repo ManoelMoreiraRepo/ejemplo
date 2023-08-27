@@ -37,7 +37,7 @@ public class ClienteController {
        return "la persona fue creada correctamente";
     }
 
-    @GetMapping("/traer/{id}")
+    @GetMapping("/detail/{id}")
     public Cliente getCliente(@PathVariable long id) {
         return iclienteService.getPersona(id);
     }
