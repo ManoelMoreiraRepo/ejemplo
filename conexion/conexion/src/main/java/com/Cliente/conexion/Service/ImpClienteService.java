@@ -38,6 +38,7 @@ public class ImpClienteService implements IClienteService {
         iclienteRepository.deleteById(id);
     }
 
+  
     @Override
     public void modifyPersona(Cliente cliente) {
         Optional<Cliente> clienteEncontrado = this.iclienteRepository.findById(cliente.getId());
@@ -47,13 +48,16 @@ public class ImpClienteService implements IClienteService {
             clienteEncontrado.get().setDireccion(cliente.getDireccion());
             iclienteRepository.save(cliente);
         }
-
     }
 
     @Override
-    public Cliente getPersona(Long id) {
-        Cliente cliente = iclienteRepository.findById(id).get();
-        return cliente;
+    public Cliente findPersona(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public Cliente getPersona(long id) {
+          Cliente cliente = iclienteRepository.findById(id).get();
+        return cliente;
+    }
 }

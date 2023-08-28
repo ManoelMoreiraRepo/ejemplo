@@ -54,8 +54,4 @@ public class Cliente{
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-    
-
-
 }

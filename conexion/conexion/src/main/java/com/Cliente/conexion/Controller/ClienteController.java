@@ -8,8 +8,6 @@ import com.Cliente.conexion.Entity.Cliente;
 import com.Cliente.conexion.Interface.IClienteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,24 +32,25 @@ public class ClienteController {
     @PostMapping("/create")
     public String createCliente(@RequestBody Cliente cliente) {
         iclienteService.savePersona(cliente);
-       return "la persona fue creada correctamente";
+        return "la persona fue creada correctamente";
     }
 
-    @GetMapping("/detail/{id}")
+    @DeleteMapping("/detail/{id}")
+    public void deleteCliente(@PathVariable long id) {
+        iclienteService.deletePersona(id);
+    }  
+    
+    
+        @GetMapping("/detail/{id}")
     public Cliente getCliente(@PathVariable long id) {
         return iclienteService.getPersona(id);
     }
     
     @PutMapping("/actualizar/{id}")
-    public String updateCliente(@PathVariable("id") int id, @RequestBody Cliente cliente){   
+    public String updateCliente(@PathVariable("id") long id, @RequestBody Cliente cliente){   
         
      this.iclienteService.modifyPersona(cliente);
      return "El cliente fue modificado correctamente";
     }
-
-    @DeleteMapping("/detail/{id}")
-    public String deleteCliente( @PathVariable long id) {
-        iclienteService.deletePersona(id);
-        return "La persona fue eliminada";
-    }
+      
 }
